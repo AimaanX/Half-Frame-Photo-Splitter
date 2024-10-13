@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Half Frame Photo Splitter & Crop Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Half Frame Photo Splitter & Crop Tool</h1>
+        </header>
+
+        <main>
+            <section id="upload-section">
+                <h2>Upload your image</h2>
+                <input type="file" id="image-input" accept="image/*">
+            </section>
+
+            <section id="preview-section">
+                <h2>Preview</h2>
+                <img id="image-preview" alt="Your uploaded image will appear here" />
+                <button id="crop-button" style="display:none;">Crop Vertical Bar & Split</button>
+            </section>
+
+            <section id="split-section" style="display:none;">
+                <h2>Half Frame Split Images</h2>
+                <div id="split-images" class="split-images-container">
+                    <!-- Split images will be inserted here -->
+                </div>
+                <button id="download-image-1" style="display:none;">Download Image 1</button>
+                <button id="download-image-2" style="display:none;">Download Image 2</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Half Frame Photo Splitter</p>
+        </footer>
+    </div>
+
+    <!-- Hidden canvases for processing -->
+    <canvas id="source-canvas" style="display:none;"></canvas>
+    <canvas id="split-canvas-1" style="display:none;"></canvas>
+    <canvas id="split-canvas-2" style="display:none;"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script src="scripts.js"></script>
+
+</body>
+</html>
